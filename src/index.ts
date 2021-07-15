@@ -23,12 +23,12 @@ collection.printAll()
 
 // add new todo to the collection
 // this will return a id of the newly added todo
-let newId1 = collection.addTodo("Watch Movie");
-let newId2 = collection.addTodo("Go to Sleep");
+let newId1 : number= collection.addTodo("Watch Movie");
+let newId2 : number= collection.addTodo("Go to Sleep");
 
 // get todo's by Id
-let todoItem1 = collection.getTodoById(newId1);
-let todoItem2 = collection.getTodoById(newId2);
+let todoItem1 : TodoItem= collection.getTodoById(newId1);
+let todoItem2 : TodoItem= collection.getTodoById(newId2);
 
 // Print details of todo items fetched by id
 console.log("\n*** Todo's fetched by ID ***")
