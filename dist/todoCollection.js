@@ -8,8 +8,12 @@ class TodoCollection {
         this.todoItems = todoItems;
         // to define item id
         this.nextId = 1;
+        // by this way we can store a todo item in the form of key value pair
+        // itemMap have keys in form of number an dvalues are of TodoItem type
+        this.itemMap = new Map();
         // no statements required here
         // TS compiler will auto genrate these
+        todoItems.forEach(item => this.itemMap.set(item.id, item));
     }
     // adding a new todo and get ID of the added todo
     addTodo(task) {
@@ -17,12 +21,17 @@ class TodoCollection {
         while (this.getTodoById(this.nextId)) {
             this.nextId++;
         }
-        this.todoItems.push(new todoItem_1.TodoItem(this.nextId, task));
+        this.itemMap.set(this.nextId, new todoItem_1.TodoItem(this.nextId, task));
         return this.nextId;
     }
     // get a todo by specific id
     getTodoById(id) {
-        return this.todoItems.find(item => item.id === id);
+        return this.itemMap.get(id);
+    }
+    // get items based on complete status (default to get all items)
+    getTodoItems(includeComplete) {
+        return [...this.itemMap.values()]
+            .filter(item => includeComplete || !item.complete);
     }
     // mark a task as completed or back to uncomplete
     markComplete(id, complete) {
@@ -32,9 +41,26 @@ class TodoCollection {
             todoItem.complete = complete;
         }
     }
+    // Remove Completed Itmes
+    removeComplete() {
+        this.itemMap.forEach((item) => {
+            if (item.complete) {
+                this.itemMap.delete(item.id);
+            }
+        });
+    }
+    // Count items in the collection
+    getItemCounts() {
+        return {
+            total: this.itemMap.size,
+            incomplete: this.getTodoItems(false).length,
+            complete: this.itemMap.size - this.getTodoItems(false).length
+        };
+    }
     // To print all the todos at once
     printAll() {
-        this.todoItems.map((item) => { item.printDetails(); });
+        // this.todoItems.map((item)=>{item.printDetails()})
+        this.getTodoItems(true).forEach(item => item.printDetails());
     }
 }
 exports.TodoCollection = TodoCollection;
