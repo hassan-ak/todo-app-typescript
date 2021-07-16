@@ -10,10 +10,11 @@ class TodoCollection {
         this.nextId = 1;
         // by this way we can store a todo item in the form of key value pair
         // itemMap have keys in form of number an dvalues are of TodoItem type
+        // property to be accessed by class and sub Class
         this.itemMap = new Map();
         // no statements required here
         // TS compiler will auto genrate these
-        todoItems.forEach(item => this.itemMap.set(item.id, item));
+        todoItems.forEach((item) => this.itemMap.set(item.id, item));
     }
     // adding a new todo and get ID of the added todo
     addTodo(task) {
@@ -30,8 +31,7 @@ class TodoCollection {
     }
     // get items based on complete status (default to get all items)
     getTodoItems(includeComplete) {
-        return [...this.itemMap.values()]
-            .filter(item => includeComplete || !item.complete);
+        return [...this.itemMap.values()].filter((item) => includeComplete || !item.complete);
     }
     // mark a task as completed or back to uncomplete
     markComplete(id, complete) {
@@ -54,13 +54,13 @@ class TodoCollection {
         return {
             total: this.itemMap.size,
             incomplete: this.getTodoItems(false).length,
-            complete: this.itemMap.size - this.getTodoItems(false).length
+            complete: this.itemMap.size - this.getTodoItems(false).length,
         };
     }
     // To print all the todos at once
     printAll() {
         // this.todoItems.map((item)=>{item.printDetails()})
-        this.getTodoItems(true).forEach(item => item.printDetails());
+        this.getTodoItems(true).forEach((item) => item.printDetails());
     }
 }
 exports.TodoCollection = TodoCollection;

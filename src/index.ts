@@ -2,17 +2,18 @@
 import { TodoItem } from "./todoItem";
 import { TodoCollection } from "./todoCollection";
 import * as inquirer from "inquirer";
+import { JsonTodoCollection } from "./jsonTodoCollection";
 
 // List of Todos
 let todos: TodoItem[] = [
   new TodoItem(1, "Go for run", true),
   new TodoItem(2, "Play Cricket", false),
-  new TodoItem(5, "Go to Class"),
-  new TodoItem(6, "Eat Lunch", true),
+  new TodoItem(3, "Go to Class"),
+  new TodoItem(4, "Eat Lunch", true),
 ];
 
 // Collection of todos
-let collection: TodoCollection = new TodoCollection("Hassan", todos);
+let collection: TodoCollection = new JsonTodoCollection("Hassan", todos);
 // For displaying completed tasks
 let showCompleted: boolean = true;
 
