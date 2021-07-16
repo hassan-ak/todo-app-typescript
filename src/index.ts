@@ -5,12 +5,7 @@ import * as inquirer from "inquirer";
 import { JsonTodoCollection } from "./jsonTodoCollection";
 
 // List of Todos
-let todos: TodoItem[] = [
-  new TodoItem(1, "Go for run", true),
-  new TodoItem(2, "Play Cricket", false),
-  new TodoItem(3, "Go to Class"),
-  new TodoItem(4, "Eat Lunch", true),
-];
+let todos: TodoItem[] = [];
 
 // Collection of todos
 let collection: TodoCollection = new JsonTodoCollection("Hassan", todos);
