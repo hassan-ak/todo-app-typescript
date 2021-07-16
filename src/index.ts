@@ -1,61 +1,113 @@
 // Imports
 import { TodoItem } from "./todoItem";
 import { TodoCollection } from "./todoCollection";
+import * as inquirer from "inquirer";
 
 // List of Todos
-let todos : TodoItem[] = [
-    new TodoItem(1, "Go for run", true),
-    new TodoItem(2, "Play Cricket", false),
-    new TodoItem(5, "Go to Class"), 
-    new TodoItem(6, "Eat Lunch",true)
+let todos: TodoItem[] = [
+  new TodoItem(1, "Go for run", true),
+  new TodoItem(2, "Play Cricket", false),
+  new TodoItem(5, "Go to Class"),
+  new TodoItem(6, "Eat Lunch", true),
 ];
 
 // Collection of todos
-let collection : TodoCollection = new TodoCollection("Hassan", todos);
+let collection: TodoCollection = new TodoCollection("Hassan", todos);
 
-// Clear console
-console.clear();
+// Function to display ToDo list, this function will be used with inquirer
+function displayTodoList(): void {
+  console.log(
+    `${collection.userName}'s Todo List \nTotal : ${
+      collection.getItemCounts().total
+    } \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${
+      collection.getItemCounts().incomplete
+    }`
+  );
+  collection.printAll();
+}
 
-// Print Collection (Pre defined)
-console.log("*** Original Collection ***")
-console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
-collection.printAll()
+// Commands to be displayed in the command prompt
+enum Commands {
+  Quit = "Quit",
+}
 
-// add new todo to the collection
-// this will return a id of the newly added todo
-let newId1 : number= collection.addTodo("Watch Movie");
-let newId2 : number= collection.addTodo("Go to Sleep");
+// function to take input from user
+function promptUser(): void {
+  console.clear();
+  displayTodoList();
+  inquirer
+    .prompt({
+      type: "list",
+      name: "command",
+      message: "Choose option",
+      choices: Object.values(Commands),
+    })
+    .then((answers) => {
+      if (answers["command"] !== Commands.Quit) {
+        promptUser();
+      }
+    });
+}
+promptUser();
 
-// get todo's by Id
-let todoItem1 : TodoItem= collection.getTodoById(newId1);
-let todoItem2 : TodoItem= collection.getTodoById(newId2);
+// // Imports
+// import { TodoItem } from "./todoItem";
+// import { TodoCollection } from "./todoCollection";
 
-// Print details of todo items fetched by id
-console.log("\n*** Todo's fetched by ID ***")
-todoItem1.printDetails();
-todoItem2.printDetails();
+// // List of Todos
+// let todos : TodoItem[] = [
+//     new TodoItem(1, "Go for run", true),
+//     new TodoItem(2, "Play Cricket", false),
+//     new TodoItem(5, "Go to Class"),
+//     new TodoItem(6, "Eat Lunch",true)
+// ];
 
-// Print Updated Collection
-console.log("\n*** Updated Collection with new todo's ***")
-console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
-collection.printAll()
+// // Collection of todos
+// let collection : TodoCollection = new TodoCollection("Hassan", todos);
 
-// Update complete status of todos
-collection.markComplete(2,true)
-collection.markComplete(6,false)
+// // Clear console
+// console.clear();
 
-// Print Updated Collection
-console.log("\n*** Updated Collection with Complete Status Changed ***")
-console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
-collection.printAll()
+// // Print Collection (Pre defined)
+// console.log("*** Original Collection ***")
+// console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
+// collection.printAll()
 
-// fetch items based on complete status
-console.log("\n*** Get Todo Items based on complete status ***")
-console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
-collection.getTodoItems(true).forEach(item => item.printDetails());
+// // add new todo to the collection
+// // this will return a id of the newly added todo
+// let newId1 : number= collection.addTodo("Watch Movie");
+// let newId2 : number= collection.addTodo("Go to Sleep");
 
-// Remove completed Items
-collection.removeComplete()
-console.log("\n*** Updated Collection after completed tasks removed ***")
-console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
-collection.printAll()
+// // get todo's by Id
+// let todoItem1 : TodoItem= collection.getTodoById(newId1);
+// let todoItem2 : TodoItem= collection.getTodoById(newId2);
+
+// // Print details of todo items fetched by id
+// console.log("\n*** Todo's fetched by ID ***")
+// todoItem1.printDetails();
+// todoItem2.printDetails();
+
+// // Print Updated Collection
+// console.log("\n*** Updated Collection with new todo's ***")
+// console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
+// collection.printAll()
+
+// // Update complete status of todos
+// collection.markComplete(2,true)
+// collection.markComplete(6,false)
+
+// // Print Updated Collection
+// console.log("\n*** Updated Collection with Complete Status Changed ***")
+// console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
+// collection.printAll()
+
+// // fetch items based on complete status
+// console.log("\n*** Get Todo Items based on complete status ***")
+// console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
+// collection.getTodoItems(true).forEach(item => item.printDetails());
+
+// // Remove completed Items
+// collection.removeComplete()
+// console.log("\n*** Updated Collection after completed tasks removed ***")
+// console.log(`${collection.userName}'s Todo List \nTotal : ${collection.getItemCounts().total} \tComplted : ${collection.getItemCounts().complete} \tIncomplete : ${collection.getItemCounts().incomplete}`);
+// collection.printAll()

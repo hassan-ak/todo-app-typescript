@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/hassan-ak/todo-app-typescript/issues"
   },
-  "homepage": "https://github.com/hassan-ak/todo-app-typescript#readme"
+  "homepage": "https://github.com/hassan-ak/todo-app-typescript#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^7.3.3"
+  }
 }
