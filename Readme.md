@@ -14,3 +14,11 @@ By doing this project we are able to learn following:-
   - lowdb
 
 This project is completed by following chapter one of "Essential TypeScript From Beginner to Pro" by "Adam Freeman"
+
+## Project Output
+
+As this is a console based project so output of the code at various steps are given in the image form for better understanding of the code. (titles of the images are based on commits)
+
+**Initialize a basic TypeScript project**
+
+![Basic TypeScript Project](./outputs/Step01.PNG)
