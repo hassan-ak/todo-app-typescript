@@ -25,5 +25,6 @@ As this is a console based project so output of the code at various steps are gi
 
 **Create Basic Todo App**
 
-![Basic Todo App](./outputs/Step02-1.PNG)
+![Basic Todo App](./outputs/step02-1.PNG)
+
 ![Basic Todo App](./outputs/Step02-2.PNG)
