@@ -12,3 +12,5 @@ By doing this project we are able to learn following:-
 - Third Party Package
   - inquirer
   - lowdb
+
+This project is completed by following chapter one of "Essential TypeScript From Beginner to Pro" by "Adam Freeman"
