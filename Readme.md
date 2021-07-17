@@ -22,3 +22,7 @@ As this is a console based project so output of the code at various steps are gi
 **Initialize a basic TypeScript project**
 
 ![Basic TypeScript Project](./outputs/Step01.PNG)
+
+**Create Basic Todo App**
+
+![Basic Todo App](./outputs/Step02.PNG)
