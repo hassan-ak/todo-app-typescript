@@ -28,3 +28,19 @@ As this is a console based project so output of the code at various steps are gi
 ![Basic Todo App](./outputs/step02-1.PNG)
 
 ![Basic Todo App](./outputs/Step02-2.PNG)
+
+**Add inquirer.js to prompt user for input**
+
+![App with iquirer.js](./outputs/step03-1.PNG)
+
+![App with iquirer.js](./outputs/Step03-2.PNG)
+
+![App with iquirer.js](./outputs/step03-3.PNG)
+
+![App with iquirer.js](./outputs/Step03-4.PNG)
+
+![App with iquirer.js](./outputs/step03-5.PNG)
+
+![App with iquirer.js](./outputs/Step03-6.PNG)
+
+![App with iquirer.js](./outputs/Step03-7.PNG)
