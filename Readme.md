@@ -49,8 +49,14 @@ As this is a console based project so output of the code at various steps are gi
 
 - While using lowdb to store data all the working remains the same with only difference that rather than using hard coded data from the code app will use data stored in Todos.json file and update Todos.json file with newly added todos.
 
-When App is started and no todo's are added
+When App is started and no todo's are added.
 
 ![App with iquirer.js](./outputs/Step04-1.PNG)
 
 ![App with iquirer.js](./outputs/Step04-2.PNG)
+
+New Todo's added.
+
+![App with iquirer.js](./outputs/Step04-3.PNG)
+
+![App with iquirer.js](./outputs/Step04-4.PNG)
