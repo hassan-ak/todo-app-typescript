@@ -60,3 +60,9 @@ New Todo's added.
 ![App with iquirer.js](./outputs/Step04-3.PNG)
 
 ![App with iquirer.js](./outputs/Step04-4.PNG)
+
+Remove completed todos.
+
+![App with iquirer.js](./outputs/Step04-5.PNG)
+
+![App with iquirer.js](./outputs/Step04-6.PNG)
