@@ -51,18 +51,18 @@ As this is a console based project so output of the code at various steps are gi
 
 When App is started and no todo's are added.
 
-![App with iquirer.js](./outputs/Step04-1.PNG)
+![App with lowdb](./outputs/Step04-1.PNG)
 
-![App with iquirer.js](./outputs/Step04-2.PNG)
+![App with lowdb](./outputs/Step04-2.PNG)
 
 New Todo's added.
 
-![App with iquirer.js](./outputs/Step04-3.PNG)
+![App with lowdb](./outputs/Step04-3.PNG)
 
-![App with iquirer.js](./outputs/Step04-4.PNG)
+![App with lowdb](./outputs/Step04-4.PNG)
 
 Remove completed todos.
 
-![App with iquirer.js](./outputs/Step04-5.PNG)
+![App with lowdb](./outputs/Step04-5.PNG)
 
-![App with iquirer.js](./outputs/Step04-6.PNG)
+![App with lowdb](./outputs/Step04-6.PNG)
