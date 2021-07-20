@@ -1,3 +1,9 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": 1,
+      "task": "Complete Chapter 01",
+      "complete": false
+    }
+  ]
 }
