@@ -1,4 +1,4 @@
-# Bootcamp 2021 Project 01: Todo Console and Persistent Data App in TypeScript
+# BootCamp 2021 Project 01: Todo Console and Persistent Data App in TypeScript
 
 By doing this project we are able to learn following:-
 
